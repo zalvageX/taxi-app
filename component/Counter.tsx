@@ -77,7 +77,7 @@ const Counter = () => {
         </div>
 
         {/* 👔 Person Image Section */}
-        <div className="absolute lg:right-[1rem] right-[-3rem] sm:right-[2rem] md:right-[-4rem] bottom-[-3rem] justify-center md:justify-end mt-10 md:mt-16 max-w-6xl">
+        <div className="absolute lg:right-[1rem] right-[-7rem] sm:right-[-2rem] md:right-[-7rem] bottom-[-3rem] justify-center md:justify-end mt-10 md:mt-16 max-w-6xl">
           <Image
             src="/contImg.svg"
             alt="Professional driver"

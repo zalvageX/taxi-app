@@ -102,30 +102,6 @@ const ContactUs = () => {
           </div>
 
           {/* Left */}
-          {/* <div
-            ref={(el) => { if (el) (slicesRef.current[0] = el)}}
-            className="flex-1 bg-[url('/coLcar1.png')] bg-cover bg-center relative translate-y-4 will-change-transform"
-          >
-            <div className="absolute inset-0" />
-          </div> */}
-
-          {/* Middle */}
-          {/* <div
-            ref={(el) => { if (el) (slicesRef.current[1] = el)}}
-
-            className="flex-1 bg-[url('/coLcar2.png')] bg-cover bg-center relative -translate-y-4 will-change-transform"
-          >
-            <div className="absolute inset-0" />
-          </div> */}
-
-          {/* Right */}
-          {/* <div
-            ref={(el) => { if (el) (slicesRef.current[2] = el)}}
-
-            className="flex-1 bg-[url('/coLcar3.png')] bg-cover bg-center relative translate-y-2 will-change-transform"
-          >
-            <div className="absolute inset-0" />
-          </div> */}
 
         </div>
       </div>
@@ -140,7 +116,7 @@ const ContactUs = () => {
         />
 
         {/* Overlay */}
-        <div className="absolute bg-[url('/chauffer.png')]  bg-cover bg-center md:hidden inset-0" />
+        <div className="absolute h-full bg-[url('/chauffer.png')]  bg-cover bg-center md:hidden inset-0" />
 
         {/* Form */}
         <div 
