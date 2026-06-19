@@ -62,7 +62,7 @@ export async function POST(req: Request) {
 
     // 1️⃣ Admin copy (goes to you)
     const adminEmail = await resend.emails.send({
-      from: "onboarding@resend.dev", // replace with verified domain later
+      from: "noreply@taxidevoc.com", // replace with verified domain later
       to: "chikechrisokeke@gmail.com", // your main inbox
       subject: "🚖 New Schedule-Ride Booking Request",
       replyTo: email,
@@ -83,7 +83,7 @@ export async function POST(req: Request) {
 
     // 2️⃣ Passenger confirmation (goes to them)
     const passengerEmail = await resend.emails.send({
-      from: "onboarding@resend.dev", // same verified domain
+      from: "noreply@taxidevoc.com", // same verified domain
       to: [email], // passenger’s email from the form
       subject: "✅ Your Ride Has Been Scheduled",
       html: `

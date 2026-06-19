@@ -22,7 +22,7 @@ export async function POST(req: Request) {
 
     // 📩 Send to admin
     const adminEmail = await resend.emails.send({
-      from: "onboarding@resend.dev",
+      from: "noreply@taxidevoc.com",
       to: "chikechrisokeke@gmail.com",
       subject: "🚗 New Ride Booking",
       html: `
@@ -40,7 +40,7 @@ export async function POST(req: Request) {
 
     // 📩 Send to customer
     const customerEmail = await resend.emails.send({
-      from: "onboarding@resend.dev",
+      from: "noreply@taxidevoc.com",
       to: email,
       subject: "Your Ride is Confirmed 🚗",
       html: `

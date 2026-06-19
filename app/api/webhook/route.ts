@@ -1,7 +1,11 @@
 import { NextResponse } from "next/server"
 import Stripe from "stripe"
+import { Resend } from "resend"
+
 
 export const runtime = "nodejs"
+
+const resend = new Resend(process.env.RESEND_API_KEY!)
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!)
 const endpointSecret = process.env.STRIPE_WEBHOOK_SECRET!
@@ -21,21 +25,69 @@ export async function POST(req: Request) {
 
   // 🎯 Handle event
   if (event.type === "checkout.session.completed") {
-    const session = event.data.object as Stripe.Checkout.Session
+    try {
+      const session = event.data.object as Stripe.Checkout.Session
+      const data = session.metadata || {}
 
-    console.log("✅ Payment successful:", session.id)
+      const {
+        name,
+        email,
+        phone,
+        pickup,
+        dropoff,
+        date,
+        time,
+        luggage,
+        comment,
+        price,
+      } = data
 
-    // 💡 THIS IS WHERE YOU:
-    // - Save booking to DB
-    // - Send email
-    // - Trigger WhatsApp flow
-    // - Mark ride as paid
+      console.log("📦 Booking data:", data)
 
-    const customerEmail = session.customer_details?.email
-    const amount = session.amount_total
+      await resend.emails.send({
+        from: "noreply@taxidevoc.com",
+        to: "chikechrisokeke@gmail.com",
+        subject: "🚖 New Paid Booking",
+        replyTo: email,
+        html: `
+          <h2>New Paid Ride</h2>
+          <p><strong>Name:</strong> ${name}</p>
+          <p><strong>Email:</strong> ${email}</p>
+          <p><strong>Phone:</strong> ${phone}</p>
+          <p><strong>Date:</strong> ${date}</p>
+          <p><strong>Time:</strong> ${time}</p>
+          <p><strong>Pickup:</strong> ${pickup}</p>
+          <p><strong>Drop-off:</strong> ${dropoff}</p>
+          <p><strong>Price:</strong> €${price}</p>
+        `,
+        
+      })
 
-    console.log({ customerEmail, amount })
+      await resend.emails.send({
+        from: "noreply@taxidevoc.com",
+        to: [email],
+        subject: "✅ Your Ride is Confirmed",
+        html: `
+          <h2>Hello ${name},</h2>
+          <p>Your ride has been successfully booked and paid 🚖</p>
+
+          <ul>
+            <li><strong>Date:</strong> ${date}</li>
+            <li><strong>Time:</strong> ${time}</li>
+            <li><strong>Pickup:</strong> ${pickup}</li>
+            <li><strong>Drop-off:</strong> ${dropoff}</li>
+            <li><strong>Amount Paid:</strong> €${price}</li>
+          </ul>
+
+          <p>Thank you for choosing us.</p>
+        `,
+      })
+
+    } catch (error) {
+      console.error("❌ Webhook processing error:", error)
+    }
   }
 
   return NextResponse.json({ received: true })
 }
+

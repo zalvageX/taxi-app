@@ -9,7 +9,7 @@ export async function POST(req: Request) {
     const { name, email, phone, message } = body
 
     const data = await resend.emails.send({
-      from: "onboarding@resend.dev", // replace with your verified domain later
+      from: "noreply@taxidevoc.com", // replace with your verified domain later
       to: "chikechrisokeke@gmail.com",
       subject: "🚖 New Contact Form Submission",
       html: `

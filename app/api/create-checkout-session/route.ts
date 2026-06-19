@@ -7,7 +7,7 @@ const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!)
 
 export async function POST(req: Request) {
   try {
-    const { price, pickup, dropoff } = await req.json()
+    const { price, pickup, dropoff, name, email, phone, date, time, luggage, comment } = await req.json()
 
     const session = await stripe.checkout.sessions.create({
       payment_method_types: ["card", "bancontact"],
@@ -27,6 +27,18 @@ export async function POST(req: Request) {
       ],
       success_url: `${process.env.NEXT_PUBLIC_BASE_URL}/success`,
       cancel_url: `${process.env.NEXT_PUBLIC_BASE_URL}/cancel`,
+      metadata: {
+        name,
+        email,
+        phone,
+        pickup,
+        dropoff,
+        date,
+        time,
+        luggage: String(luggage),
+        comment,
+        price: String(price),
+      },
     })
 
     return NextResponse.json({ url: session.url })
@@ -35,3 +47,4 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: "Stripe error" }, { status: 500 })
   }
 }
+

@@ -210,6 +210,13 @@ const ScheduleRide = () => {
     price: previewPrice,
     pickup,
     dropoff,
+    name,
+    email,
+    phone,
+    date,
+    time,
+    luggage,
+    comment,
   }
 
   const handleCardPayment = async () => {
@@ -703,19 +710,6 @@ const ScheduleRide = () => {
           Your ride will be scheduled without payment
         </p>
 
-        {/* <button
-          onClick={async () => {
-            await handleFinalSubmit() // ✅ uses hook
-            setShowConfirm(false)
-          }}
-          className="w-full overflow-hidden relative py-3 rounded-lg bg-blue-600 text-white
-            before:transition before:absolute before:inset-0 before:bg-blue-700
-            before:origin-bottom before:scale-y-0 before:duration-300 hover:before:scale-y-100"
-        >
-          <span className="relative">
-            Confirm Booking
-          </span>
-        </button> */}
 
         <button
           onClick={async () => {
