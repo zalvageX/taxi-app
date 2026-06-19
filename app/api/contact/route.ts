@@ -15,7 +15,7 @@ export async function POST(req: Request) {
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: auto; border: 1px solid #eee; border-radius: 8px; overflow: hidden;">
           <div style="background: #dc2626; color: white; padding: 16px; text-align: center;">
-            <h2 style="margin: 0;">De Vock Taxi</h2>
+            <h2 style="margin: 0;">De Voc Taxi</h2>
             <p style="margin: 0;">Hey De Vock, you just recieved a message</p>
           </div>
           <div style="padding: 20px; background: #f9fafb;">

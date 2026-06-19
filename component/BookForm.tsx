@@ -250,7 +250,7 @@ const BookForm = () => {
     💬 Comment: ${formData.comment || "None"}`
 
     // ⚠️ IMPORTANT: this is YOUR business number (not the user's)
-    const businessNumber = "2347084584906"
+    const businessNumber = "324915266777"
 
     const formattedUserPhone = formatPhoneForWhatsApp(formData.phone)
 
@@ -590,9 +590,9 @@ const BookForm = () => {
             verified: true,
           }}
           car={{
-            model: "Skoda Octavia",
+            model: "MG ZS EV",
             color: "White",
-            plate: "EV-1234",
+            plate: "TXAV325",
           }}
           pickup={rideData.pickup}
           dropoff={rideData.dropoff}

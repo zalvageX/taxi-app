@@ -56,7 +56,7 @@ const RideStatusModal = ({ driver, car, pickup, dropoff, price, onClose }: RideS
             </div>
           </div>
           <div 
-            onClick={() => window.location.href = "tel:+2348012345678"}
+            onClick={() => window.location.href = "tel:+324915266777"}
             className="gap-2 max-w-[70] cursor-pointer flex flex-col items-center"
           >
               <Image 
@@ -65,10 +65,10 @@ const RideStatusModal = ({ driver, car, pickup, dropoff, price, onClose }: RideS
                 width={70} 
                 height={70} 
                 />
-              <p className="text-sm text-center font-semibold text-gray-500">Reach Devock</p>
+              <p className="text-sm text-center font-semibold text-gray-500">Reach Devoc</p>
           </div>
           <div
-            onClick={() => window.open("https://wa.me/17146966128", "_blank")}
+            onClick={() => window.open("https://wa.me/324915266777", "_blank")}
             className="gap-2 max-w-[70] cursor-pointer flex flex-col items-center"
           >
             <Image 
@@ -78,7 +78,7 @@ const RideStatusModal = ({ driver, car, pickup, dropoff, price, onClose }: RideS
               height={50}
             />
             <p className="text-sm text-center font-semibold text-gray-500">
-              Chat Devock
+              Chat Devoc
             </p>
           </div>
 
@@ -92,7 +92,7 @@ const RideStatusModal = ({ driver, car, pickup, dropoff, price, onClose }: RideS
         <div className="mt-4  p-4 rounded-xl flex justify-between items-center bg-red-100">
           <div className="flex items-center gap-2 text-black/80">
             <span className="bg-gray-100 p-2 rounded">💳 Fee</span>
-            <p className="font-bold">£ {price}</p>
+            <p className="font-bold">€ {price}</p>
           </div>
         </div>
       </div>

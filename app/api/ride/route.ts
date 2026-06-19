@@ -87,18 +87,47 @@ export async function POST(req: Request) {
       to: [email], // passenger’s email from the form
       subject: "✅ Your Ride Has Been Scheduled",
       html: `
-        <h2>Thank you for booking with De Vock Taxi!</h2>
-        <p>Hello ${name},</p>
-        <p>Your ride has been scheduled successfully. Here are the details:</p>
-        <ul>
-          <li><strong>Hi:</strong> ${name}</li>
-          <li><strong>Date:</strong> ${date}</li>
-          <li><strong>Time:</strong> ${time}</li>
-          <li><strong>Pickup:</strong> ${from}</li>
-          <li><strong>Drop-off:</strong> ${to}</li>
-          <li><strong>Price:</strong> €${previewPrice ? Number(previewPrice).toFixed(2) : "N/A"}</li>
-        </ul>
-        <p>We’ll be in touch if anything changes. Safe travels!</p>
+
+      <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#f9fafb; padding:20px 0; font-family:Arial, sans-serif;">
+  <tr>
+    <td align="center">
+      <table width="600" cellpadding="0" cellspacing="0" border="0" style="background:#ffffff; border:1px solid #eee; border-radius:8px; overflow:hidden;">
+        
+        <!-- Header -->
+        <tr>
+          <td align="center" bgcolor="#60BD66" style="padding:16px; color:#ffffff; font-size:20px; font-weight:bold;">
+            ✅ Your Ride Has Been Scheduled
+          </td>
+        </tr>
+        
+        <!-- Body -->
+        <tr>
+          <td style="padding:20px; color:#333333; font-size:14px; line-height:1.6;">
+            <p>Hello ${name},</p>
+            <p>Your ride has been scheduled successfully. Here are the details:</p>
+            <table width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-top:10px;">
+              <tr><td><strong>Passenger Name:</strong> ${name}</td></tr>
+              <tr><td><strong>Date:</strong> ${date}</td></tr>
+              <tr><td><strong>Time:</strong> ${time}</td></tr>
+              <tr><td><strong>Pickup:</strong> ${from}</td></tr>
+              <tr><td><strong>Drop-off:</strong> ${to}</td></tr>
+              <tr><td><strong>Price:</strong> €${previewPrice ? Number(previewPrice).toFixed(2) : "N/A"}</td></tr>
+            </table>
+            <p style="margin-top:15px;">We’ll be in touch if anything changes. Safe travels!</p>
+          </td>
+        </tr>
+        
+        <!-- Footer -->
+        <tr>
+          <td align="center" bgcolor="#f1f1f1" style="padding:12px; font-size:12px; color:#666666;">
+            De Vock Taxi • Reliable rides, every time
+          </td>
+        </tr>
+        
+      </table>
+    </td>
+  </tr>
+</table>
       `,
     })
 

@@ -85,7 +85,7 @@ const Footer = () => {
 
       {/* Bottom bar */}
       <div className="border-t border-gray-700 mt-10 pt-4 text-center text-sm text-gray-400">
-         &copy; 2026  De Vock, All Rights Reserved.{" "}
+         &copy; 2026  De Voc, All Rights Reserved.{" "}
         <a href="#" className="text-red-600 hover:underline">
           Terms of use applied.
         </a>

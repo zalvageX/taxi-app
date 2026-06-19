@@ -120,7 +120,8 @@ const Hero = () => {
       <div ref={carWrapperRef} className="absolute bottom-[-20px] right-[-40px] w-[120%] md:w-[75%]">
         <Image
           ref={carRef}
-          src="/heroCarBg.png"
+          // src="/heroCarBg.png"
+          src="/heroBgTwo.png"
           alt="hero Car bg"
           width={1200}
           height={1200}
