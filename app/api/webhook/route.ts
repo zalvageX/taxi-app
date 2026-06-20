@@ -46,20 +46,36 @@ export async function POST(req: Request) {
 
       await resend.emails.send({
         from: "noreply@taxidevoc.com",
-        to: "chikechrisokeke@gmail.com",
+        to: "taxidevoc@gmailcom",
         subject: "🚖 New Paid Booking",
         replyTo: email,
         html: `
-          <h2>New Paid Ride</h2>
-          <p><strong>Name:</strong> ${name}</p>
-          <p><strong>Email:</strong> ${email}</p>
-          <p><strong>Phone:</strong> ${phone}</p>
-          <p><strong>Date:</strong> ${date}</p>
-          <p><strong>Time:</strong> ${time}</p>
-          <p><strong>Pickup:</strong> ${pickup}</p>
-          <p><strong>Drop-off:</strong> ${dropoff}</p>
-          <p><strong>Price:</strong> €${price}</p>
-        `,
+          <div style="background:#111827; color:#ffffff; padding:18px; text-align:center;"> 
+          <h2 style="margin:0;">🚖 New Paid Booking</h2> 
+            
+          </div>
+          <div style="padding:20px; color:#333;"> 
+            <p style="margin:5px 0 0; font-size:14px;">
+              A new ride has been booked and paid:
+            </p> 
+          <div style="background:#f9fafb; padding:15px; border-radius:8px;">
+            <p><strong>Name:</strong> ${name}</p> 
+            <p><strong>Email:</strong> ${email}</p> 
+            <p><strong>Phone:</strong> ${phone}</p> 
+            <p><strong>Date:</strong> ${date}</p> 
+            <p><strong>Time:</strong> ${time}</p> 
+            <p><strong>Pickup:</strong> ${pickup}</p> 
+            <p><strong>Drop-off:</strong> ${dropoff}</p> 
+            <p><strong>Luggage:</strong> ${luggage}</p>
+            ${comment ? `<p><strong>Comment:</strong> ${comment}</p>` : ""}
+            <p style="margin-top:10px; font-size:18px;"><strong>💳 Paid:</strong> €${price}</p>
+          </div>
+          </div>
+          <div style="background:#f1f5f9; padding:12px; text-align:center; font-size:12px; color:#666;">
+             TaxiDevoc System Notification
+          </div>
+        `
+        ,
         
       })
 
@@ -68,18 +84,28 @@ export async function POST(req: Request) {
         to: [email],
         subject: "✅ Your Ride is Confirmed",
         html: `
-          <h2>Hello ${name},</h2>
-          <p>Your ride has been successfully booked and paid 🚖</p>
-
-          <ul>
-            <li><strong>Date:</strong> ${date}</li>
-            <li><strong>Time:</strong> ${time}</li>
-            <li><strong>Pickup:</strong> ${pickup}</li>
-            <li><strong>Drop-off:</strong> ${dropoff}</li>
-            <li><strong>Amount Paid:</strong> €${price}</li>
-          </ul>
-
-          <p>Thank you for choosing us.</p>
+          <div style="background:#0ea5e9; color:#ffffff; padding:20px; text-align:center;"> 
+          <h2 style="margin:0;">✅ Ride Confirmed</h2> 
+            <p style="margin:5px 0 0; font-size:14px;">
+              Your booking is secured
+            </p> 
+          </div>
+          <div style="padding:20px; color:#333;"> 
+            <p>Hello <strong>${name}</strong>,</p>
+          <div style="background:#f9fafb; padding:15px; border-radius:8px; margin-top:15px;">
+            <p><strong>📅 Date:</strong> ${date}</p> 
+            <p><strong>⏰ Time:</strong> ${time}</p> 
+            <p><strong>📍 Pickup:</strong> ${pickup}</p> 
+            <p><strong>🏁 Drop-off:</strong> ${dropoff}</p> 
+            <p><strong>💼 Luggage:</strong> ${luggage}</p>
+            <p style="margin-top:10px; font-size:18px;"><strong>💳 Paid:</strong> €${price}</p>
+          </div>
+          ${comment ? ` <div style="margin-top:15px;"> <p><strong>📝 Note:</strong> ${comment}</p> </div> ` : ""}
+            <p style="margin-top:20px;">Thank you for choosing us. Your driver will contact you shortly.</p> 
+          </div>
+          <div style="background:#f1f5f9; padding:12px; text-align:center; font-size:12px; color:#666;">
+             © ${new Date().getFullYear()} TaxiDevoc 
+          </div>
         `,
       })
 

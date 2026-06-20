@@ -14,6 +14,8 @@ const Hero = () => {
   const carRef = useRef<HTMLImageElement | null>(null)
   const ctaRef = useRef<HTMLButtonElement | null>(null)
   const carWrapperRef = useRef<HTMLDivElement | null>(null)
+  const formRef = useRef<HTMLDivElement | null>(null)
+
 
  useEffect(() => {
   const ctx = gsap.context(() => {
@@ -27,6 +29,14 @@ const Hero = () => {
       ease: "power3.out",
       stagger: 0.2,
     })
+
+    tl.from(formRef.current, {
+      x: 120,
+      opacity: 0,
+      duration: 1.2,
+      ease: "power3.out",
+    }, "-=0.8")
+
 
     // CAR ENTER (slightly overlaps text)
     tl.from(
@@ -57,15 +67,6 @@ const Hero = () => {
       },
       "-=0.3"
     )
-    
-    // CAR FLOAT LOOP (independent, smooth)
-    // gsap.to(carRef.current, {
-    //   y: -10,
-    //   duration: 3,
-    //   repeat: -1,
-    //   yoyo: true,
-    //   ease: "sine.inOut",
-    // })
     
     gsap.to(carRef.current, {
       y: -10,
@@ -181,7 +182,7 @@ const Hero = () => {
 
         {/* RIGHT FORM */}
 
-        <div className="relative z-10 md:w-[500px] w-auto">
+        <div ref={formRef} className="relative z-10 md:w-[500px] w-auto">
           {/* <BookingForm /> */}
           <BookForm />
         </div>

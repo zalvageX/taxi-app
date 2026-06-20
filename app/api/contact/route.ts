@@ -10,7 +10,7 @@ export async function POST(req: Request) {
 
     const data = await resend.emails.send({
       from: "noreply@taxidevoc.com", // replace with your verified domain later
-      to: "chikechrisokeke@gmail.com",
+      to: "taxidevoc@gmailcom",
       subject: "🚖 New Contact Form Submission",
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: auto; border: 1px solid #eee; border-radius: 8px; overflow: hidden;">
