@@ -46,7 +46,7 @@ export async function POST(req: Request) {
 
       await resend.emails.send({
         from: "noreply@taxidevoc.com",
-        to: "taxidevoc@gmailcom",
+        to: "taxidevoc@gmail.com",
         subject: "🚖 New Paid Booking",
         replyTo: email,
         html: `
