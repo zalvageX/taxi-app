@@ -69,17 +69,17 @@ export const choose = [
 
 export const testimonials = [
     {
-        subtext: "“De vock is the most reliable driver I’ve ever used in Belgium. He picked me up from Brussels Airport at 6 AM and got me to my meeting in Antwerp right on time. The car was spotless, and his knowledge of the routes saved me from morning traffic. Highly recommended!”",
+        subtext: "“De voc is the most reliable driver I’ve ever used in Belgium. He picked me up from Brussels Airport at 6 AM and got me to my meeting in Antwerp right on time. The car was spotless, and his knowledge of the routes saved me from morning traffic. Highly recommended!”",
         label: "- Marie Laurent, Buisness Traveler, Brussels",
         imgURL: "/fourStar.svg",
     },
     {
-        subtext: "“Booking with Taxi Belgium was so easy. Dvock drove my family from Ghent to Bruges for a weekend trip. He was friendly,         patient with the kids, and even suggested anice local stop along the way. We felt safe and comfortable the entire ride. We’ll definitely use him again!”",
+        subtext: "“Booking with Taxi Belgium was so easy. De Voc drove my family from Ghent to Bruges for a weekend trip. He was friendly,         patient with the kids, and even suggested anice local stop along the way. We felt safe and comfortable the entire ride. We’ll definitely use him again!”",
         label: "- Thomas & Sophie Dubois, Ghent",
         imgURL: "/fourStar.svg",
     },
     {
-        subtext: "“As a frequent visitor to Belgium, I always call Dvock now. He’s punctual, professional, and knows every corner of the country. Last month he took me from Liège to Charleroi Airport late at night — smooth and stressfree. True one-man reliability!”",
+        subtext: "“As a frequent visitor to Belgium, I always call De Voc now. He’s punctual, professional, and knows every corner of the country. Last month he took me from Liège to Charleroi Airport late at night — smooth and stressfree. True one-man reliability!”",
         label: "- Pieter Jansen, Regular Client, Liège",
         imgURL: "/fiveStar.svg",
     },

@@ -133,29 +133,29 @@ const AboutUs = () => {
               ref={addToTopTextRefs}
              className="text-2xl font-semibold"
             >
-              Reliable Rides by Dvock
+              Reliable Rides by De Voc
             </h2>
             <p ref={addToTopTextRefs}>
-              Rides by Dvock is a trusted, personal taxi service based entirely
-              in Belgium and operated solely by Dvock. With a passion for safe
-              and comfortable travel, Dvock provides a dedicated, one-on-one
+              Rides by De Voc is a trusted, personal taxi service based entirely
+              in Belgium and operated solely by De Voc. With a passion for safe
+              and comfortable travel, De Voc provides a dedicated, one-on-one
               service across the country — from the bustling streets of Brussels
               to the historic lanes of Bruges, Antwerp, Ghent, and beyond.
             </p>
             <h3 className="text-xl font-semibold mt-4" ref={addToTopTextRefs}>
-              Why Choose Dvock?
+              Why Choose De Voc?
             </h3>
 
             <ul className="list-disc list-inside space-y-2 text-gray-600">
-              <li ref={addToTopTextRefs}>Personalized service with Dvock as your dedicated driver</li>
+              <li ref={addToTopTextRefs}>Personalized service with De Voc as your dedicated driver</li>
               <li ref={addToTopTextRefs}>Clean, comfortable vehicles for a premium experience</li>
               <li ref={addToTopTextRefs}>Transparent pricing with no hidden fees</li>
               <li ref={addToTopTextRefs}>Available for airport transfers, city rides, and long-distance trips</li>
             </ul>
             <p ref={addToTopTextRefs} className="mt-4">
-              Taxi De Vock is driven by commitment, professionalism, and a
+              Taxi De Voc is driven by commitment, professionalism, and a
               genuine desire to make every ride enjoyable. When you book with
-              us, you’re not just getting a taxi — you’re getting Dvock’s full
+              us, you’re not just getting a taxi — you’re getting De Voc’s full
               attention and expertise.
             </p>
           </div>
@@ -186,7 +186,7 @@ const AboutUs = () => {
             >
               Whether you’re catching a flight or arriving from one, our 
               airport transfer service ensures a smooth, stress-free experience. 
-              Dvock will be there to pick you up or drop you off on time, 
+              De Voc will be there to pick you up or drop you off on time, 
               with plenty of space for your luggage and a comfortable ride 
               to or from the airport.
             </p>

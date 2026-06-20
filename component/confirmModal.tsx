@@ -65,7 +65,26 @@ const ConfirmModal = ({ quote, formData, animatedRoute, onClose, onSuccess }: Pr
         }),
       })
 
-      if (!res.ok) throw new Error("Failed")
+      if (!res.ok) throw new Error("Booking failed")
+
+
+      const paymentRes =await fetch("/api/create-payment-link", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          pickup: quote.pickup,
+          dropoff: quote.dropoff,
+          date: formData.date,
+          time: formData.time,
+          price: quote.price,
+        }),
+      })
+
+      if (!paymentRes.ok) throw new Error("Payment link failed")
 
       // ✅ REAL TOAST
       toast.success("Ride booked successfully 🚗")

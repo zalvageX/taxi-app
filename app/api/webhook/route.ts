@@ -61,7 +61,7 @@ export async function POST(req: Request) {
           <div style="background:#f9fafb; padding:15px; border-radius:8px;">
             <p><strong>Name:</strong> ${name}</p> 
             <p><strong>Email:</strong> ${email}</p> 
-            <p><strong>Phone:</strong> ${phone}</p> 
+            // <p><strong>Phone:</strong> ${phone}</p> 
             <p><strong>Date:</strong> ${date}</p> 
             <p><strong>Time:</strong> ${time}</p> 
             <p><strong>Pickup:</strong> ${pickup}</p> 
