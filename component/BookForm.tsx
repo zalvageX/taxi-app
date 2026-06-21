@@ -164,13 +164,7 @@ const BookForm = () => {
 
     // 🔥 RESET animation BEFORE opening modal
     setAnimatedRoute([])
-    // console.log("Form submitted:", {
-    //   ...formData,
-    //   passengers,
-    //   price: quote?.price,
-    // })
-
-    // await calculateQuote(formData.pickup, formData.dropoff)
+    
 
     setShowModal(true) 
     setIsSubmitting(false)
@@ -503,11 +497,7 @@ const BookForm = () => {
         />
 
         {/* 💰 Price */}
-        {/* {previewPrice && (
-          <div className="text-center mb-4 text-white">
-            €{previewPrice.toFixed(2)}
-          </div>
-        )} */}
+        
         {loading && (
           <p className="text-sm text-gray-400 mt-2">Calculating fare...</p>
         )}

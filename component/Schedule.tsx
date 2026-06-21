@@ -41,9 +41,6 @@ const ScheduleRide = () => {
   const [message, setMessage] = useState("Please wait...")
   const [confirmingBooking, setConfirmingBooking] = useState(false)
 
-  // setTimeout(() => {
-  //   setMessage("Redirecting to secure payment...")
-  // }, 1000)
 
   // 🎯 Form UI state
   const [luggage, setLuggage] = useState(false)
@@ -297,71 +294,49 @@ const ScheduleRide = () => {
         </label>
 
         {/* 📅 Date + Time */}
-        {/* <div className="flex gap-3 mb-4">
-          <input
-            key={`date-${shakeKey}`}
-            type="date"
-            value={date}
-            title="Select a date"
-            min={new Date().toISOString().split("T")[0]}
-            onChange={(e) => setDate(e.target.value)}
-            className={`w-1/2 bg-transparent border rounded px-3 py-2 
-              outline-none focus:bg-black/60 border-white/30 focus:ring-2 focus:ring-red-500
-              transition ${errors.date ? "input-error" : ""}`}
-          />
+       
+        <div className="flex gap-3 mb-4">
+      {/* Date input */}
+      <div className="relative w-1/2">
+        <input
+          key={`date-${shakeKey}`}
+          type="date"
+          value={date}
+          min={new Date().toISOString().split("T")[0]}
+          onChange={(e) => setDate(e.target.value)}
+          className={`peer w-full bg-transparent border rounded px-3 pt-5 pb-2 
+            outline-none focus:bg-black/60 border-white/30 focus:ring-2 focus:ring-red-500
+            transition ${errors.date ? "input-error" : ""}`}
+        />
+        <label
+          className="absolute left-3 top-2 text-slate-800 text-sm transition-all 
+            peer-placeholder-shown:top-5 peer-placeholder-shown:text-xs peer-placeholder-shown:text-slate-500
+            peer-focus:top-2 peer-focus:text-sm peer-focus:text-red-500"
+        >
+          Select a date
+        </label>
+      </div>
+
+        {/* Time input */}
+        <div className="relative w-1/2">
           <input
             key={`time-${shakeKey}`}
             type="time"
             value={time}
-            title="Select time"
             onChange={(e) => setTime(e.target.value)}
-            className={`w-1/2 bg-transparent border rounded px-3 py-2 
+            className={`peer w-full bg-transparent border rounded px-3 pt-5 pb-2 
               outline-none focus:bg-black/60 border-white/30 focus:ring-2 focus:ring-red-500
               transition ${errors.time ? "input-error" : ""}`}
           />
-        </div> */}
-        <div className="flex gap-3 mb-4">
-  {/* Date input */}
-  <div className="relative w-1/2">
-    <input
-      key={`date-${shakeKey}`}
-      type="date"
-      value={date}
-      min={new Date().toISOString().split("T")[0]}
-      onChange={(e) => setDate(e.target.value)}
-      className={`peer w-full bg-transparent border rounded px-3 pt-5 pb-2 
-        outline-none focus:bg-black/60 border-white/30 focus:ring-2 focus:ring-red-500
-        transition ${errors.date ? "input-error" : ""}`}
-    />
-    <label
-      className="absolute left-3 top-2 text-slate-800 text-sm transition-all 
-        peer-placeholder-shown:top-5 peer-placeholder-shown:text-xs peer-placeholder-shown:text-slate-500
-        peer-focus:top-2 peer-focus:text-sm peer-focus:text-red-500"
-    >
-      Select a date
-    </label>
-  </div>
-
-  {/* Time input */}
-  <div className="relative w-1/2">
-    <input
-      key={`time-${shakeKey}`}
-      type="time"
-      value={time}
-      onChange={(e) => setTime(e.target.value)}
-      className={`peer w-full bg-transparent border rounded px-3 pt-5 pb-2 
-        outline-none focus:bg-black/60 border-white/30 focus:ring-2 focus:ring-red-500
-        transition ${errors.time ? "input-error" : ""}`}
-    />
-    <label
-      className="absolute left-3 top-2 text-slate-800 text-sm transition-all 
-        peer-placeholder-shown:top-5 peer-placeholder-shown:text-xs peer-placeholder-shown:text-slate-500
-        peer-focus:top-2 peer-focus:text-sm peer-focus:text-red-500"
-    >
-      Select a time
-    </label>
-  </div>
-</div>
+          <label
+            className="absolute left-3 top-2 text-slate-800 text-sm transition-all 
+              peer-placeholder-shown:top-5 peer-placeholder-shown:text-xs peer-placeholder-shown:text-slate-500
+              peer-focus:top-2 peer-focus:text-sm peer-focus:text-red-500"
+          >
+            Select a time
+          </label>
+        </div>
+      </div>
 
 
         {/* 📍 Pickup */}
