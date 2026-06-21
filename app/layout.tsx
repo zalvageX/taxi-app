@@ -17,9 +17,35 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "De Vock Taxi",
-  description: "A taxi booking platform in belgium",
+  title: "Taxi De Voc | Reliable Ride Booking in Belgium",
+  description: "Book affordable and reliable taxi rides in Belgium: Brussels, Antwerp, Ghent with De Voc Taxi. Easy online scheduling, trusted drivers, and transparent rates for city travel.",
+  openGraph: {
+    title: "Taxi De Voc | Reliable Ride Booking in Belgium",
+    description: "Book affordable and reliable taxi rides in Belgium with De Voc Taxi.",
+    url: "https://www.taxidevoc.com",
+    siteName: "De Voc Taxi",
+    images: [
+      {
+        url: "/heroBg.png",
+        width: 1200,
+        height: 630,
+        alt: "De Voc Taxi Belgium"
+      }
+    ],
+    locale: "en_BE",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Taxi De Voc | Belgium Ride Booking",
+    description: "Affordable, reliable taxi rides in Belgium:  Brussels, Antwerp, Ghent with trusted drivers.",
+    images: ["/heroBg.png"],
+  },
+  other: {
+    keywords: "Belgium taxi, book taxi Belgium, city rides Belgium, affordable taxi service, De Voc Taxi"
+  }
 };
+
 
 
  

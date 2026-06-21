@@ -7,7 +7,7 @@
 @tailwind utilities;
 
 :root {
-  --background: #ededed;
+  --background: #6a0202;
   --foreground: #171717;
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -88,36 +88,4 @@ body {
   box-shadow: 0 0 0 2px rgba(248, 113, 113, 0.4);
   animation: shake 0.3s ease;
 }
-
-/* .banner-curve {
-  background-color: #dc2626;
-  color: white;
-  position: relative;
-  clip-path: polygon(
-    0% 0%, 4% 50%, 0% 100%, 
-    100% 100%, 96% 50%, 100% 0%
-  );
-  border-radius: 0 20px 20px 0;
-} */
-
-
-
-
-/* @layer utilities {
-  .btn_white {
-    @apply border-2 border-gray-900 bg-white px-8 py-3 text-black;
-  }
-  .btn_white_text {
-    @apply border-2 border-gray-200 bg-white px-8 py-3 text-gray-900;
-  }
-  .btn_red {
-    @apply border-2 border-red-900 bg-red-900 px-8 py-5 text-white;
-  }
-  .btn_dark_green {
-    @apply bg-green-900 px-8 py-4 text-white transition-all hover:bg-black;
-  }
-  .btn_dark_red_outline {
-    @apply border-2 border-gray-200 bg-red-900 px-8 py-5 text-white;
-  }
-} */
 
