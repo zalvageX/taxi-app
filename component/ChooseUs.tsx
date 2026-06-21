@@ -18,6 +18,8 @@ const ChooseUs = () => {
   const [pickup, setPickup] = useState("")
   const [dropoff, setDropoff] = useState("")
   const [success, setSuccess] = useState(false)
+  const [locationStatus, setLocationStatus] = useState("📍 Use my current location")
+  const [isGettingLocation, setIsGettingLocation] = useState(false)
 
   const {
     quote,
@@ -97,10 +99,27 @@ const ChooseUs = () => {
             />
             <button
               type="button"
-              onClick={getLocation}
+              onClick={async () => {
+              setIsGettingLocation(true)
+              setLocationStatus("📍Please wait...")
+
+              setTimeout(() => {
+                setLocationStatus("📍Getting Location...")
+              }, 500)
+
+              await getLocation()
+
+              setLocationStatus("Done!")
+
+              setTimeout(() => {
+                setLocationStatus("📍 Use my current location")
+                setIsGettingLocation(false)
+              }, 1500)
+            }}
+            disabled={isGettingLocation}
               className="text-sm text-blue-600 mt-1 hover:text-blue-900 transition-all duration-200"
             >
-              📍 Use my current location
+              {locationStatus}
             </button>
 
             {pickupSuggestions.length > 0 && (
